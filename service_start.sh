@@ -1,6 +1,6 @@
 while true; do
 
-cmd=$(ps -elf | awk -F ' ' '{print $15}' | sort | uniq | grep ssh)
+cmd=$(ps -aux | awk -F ' ' '{print $15}' | sort | uniq | grep ssh)
 string="ssh"
 
 if [[ "$cmd" =~ [$string] ]];
